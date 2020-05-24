@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="For Product Hunt">
+    <meta name="author" content="Prime Lazier">
+
+    <title>Product Hunt</title>
+
+    <!-- Bootstrap core CSS -->
+    {% load static %}
+    <link rel='icon' type='favicon' href='{% static 'letter-a.png' %}' />
+<link href="/media/css/bootstrap.min.css" rel="stylesheet">
+
+<meta name="theme-color" content="#563d7c">
+
+
+    <!-- Custom styles for this template -->
+    <link href="/media/css/album.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+     {% include 'nav.html' %}
+        
+</header>
+
+<main class="container" role="main">
+  {% block content %}
+
+  {% endblock %}
+</main>
+
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>This is my personal blog and web page. Not deal to the others</p>
+    <p class="text-center"> &copy; Prime Lazier {% now 'Y' %} </p>
+  </div>
+</footer>
+<script src="/media/js/jquery.slim.min.js" type='text/javascript'></script>
+<script src="/media/js/bootstrap.min.js" type='text/javascript'> </script>
+
+  </body>
+</html>

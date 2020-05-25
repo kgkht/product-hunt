@@ -4,5 +4,31 @@
 
 <h3> Home Page </h3>
 
+{% for product in products %}
+
+<div class="row mt-3">
+  <div class="col-2">
+    <img src="{{ product.image.url }}" class="img-fluid"/>
+  </div>
+  <div class="col-6">
+    <a href="{% url 'products:detail' product.id %}">
+      <h3> {{ product.title }} </h3>
+    </a>
+    
+    <p> {{ product.summary }} </p>
+  </div>
+  <div class="col-4">
+    <a href="javascript:{document.getElementById('upvote{{product.id}}').submit()}" class="btn btn-block btn-success btn-md"> Upvote {{ product.votes_total }} </a>
+    <form id="upvote{{product.id}}" action="{% url 'products:upvote' product.id %}" method="post">
+      {% csrf_token %}
+      <input type="hidden">
+    </form>
+    
+  </div>
+  
+</div>
+
+
+{% endfor %}
 
 {% endblock %}

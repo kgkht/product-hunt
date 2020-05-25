@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3> Sign UP Page  </h3>
+
+{% if error %}
+<strong style="color:red;">{{error}}</strong>
+{% endif %}
+
+<form method="post" action="{% url 'products:create' %}" style="max-width: 500px;" enctype="multipart/form-data">
+  {% csrf_token %}
+  <p>  Title: </p>
+  <input type="text" name="title" class="form-control"/>
+
+  <p> Body: </p>
+  <input class="form-control" type="text" name="body" />
+
+  <p> URL: </p>
+  <input class="form-control" type="text" name="url" />
+
+  
+  <p> Icon: </p>
+  <input class="form-control" type="file" name="icon" />
+
+    <p> Image: </p>
+  <input class="form-control" type="file" name="image" />
+
+
+  <p> &copy; </p>
+  <input class="btn btn-primary" type="submit" value="Add Product" />
+  
+</form>
+
+
+{% endblock %}
